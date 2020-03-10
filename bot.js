@@ -1,8 +1,8 @@
 'use strict';
+const bot_secret_token = require('./config.js');
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const ytdl = require('ytdl-core');
-const bot_secret_token = ""
 client.login(bot_secret_token)
 
 var playList = []
@@ -67,7 +67,7 @@ async function loopPlayList(message, connection) {
 }
 
 //when send a url for a youtube video, bot joins voice channel and plays audio of said video then disconnects
-function playYoutube(message, url, ) {
+function playYoutube(message, url ) {
   var voiceChannel = message.member.voiceChannel
   voiceChannel.join()
     .then(connection => {
